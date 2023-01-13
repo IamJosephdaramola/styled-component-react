@@ -1,19 +1,19 @@
 import { ThemeProvider } from 'styled-components';
-import { theme } from './theme.styled';
-import GlobalStyles from './styles/GlobalStyles';
-import { Container } from './styles/Container.styled';
-import { Header } from './components';
+import { Container, GlobalStyles, theme } from './styles';
+import { Header, Card, Footer } from './components';
+import { content } from './content';
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			<>
-				<GlobalStyles />
-				<Header />
-				<Container>
-					<h1>hello world</h1>
-				</Container>
-			</>
+			<GlobalStyles />
+			<Header />
+			<Container>
+				{content.map((item) => (
+					<Card key={item.id} {...item} />
+				))}
+			</Container>
+			<Footer />
 		</ThemeProvider>
 	);
 }

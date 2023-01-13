@@ -8,5 +8,6 @@ declare module 'styled-components' {
 			header: string;
 			footer: string;
 		};
+		mobile: string;
 	}
 }
